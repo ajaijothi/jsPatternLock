@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head><title>Android like pattern</title>
+<style>
+/*custom style for this page */
+ svg circle, svg rect, svg path {
+    cursor:move;
+}
+body {
+    background:url(http://www.publicdomainpictures.net/pictures/40000/nahled/blue-check-pattern-background.jpg);
+}
+span {
+    color:green;
+}
+div {
+    text-align:center;
+    font-size:14px;
+    font-family:arial;
+    font-weight:bold;
+    line-height:50px;
+}
+</style>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="pattern.js"></script>
+</head>
+<body>
+<div id="mypattern"></div>
+<div>Try the Sample Pattern: <span>3-4-5-10-15</span> (count horizontally). You will get success alert</div>
+<div>
+    <input type="button" id="valueBtn" value="Value" />
+    <input type="button" id="clearBtn" value="clear" />
+</div>
+<script>
+//how to use
+//creating pattern
+var s = new Pattern({
+    dimension: '5x5',
+    outerColor: '#000',
+    patternRadius: 20,
+    patternGap: 30,
+    padding: 20,
+    background: '#333',
+    backgroundOpacity: 0.5
+});
+//draw pattern to a container
+s.draw('mypattern');
+//handler to call after the pattern is drawn
+s.onFinish = function (v) {
+    if (v == samplePattern) alert('success');
+    else this.error();
+};
+
+
+
+
+//handling Plugin
+var samplePattern = "3-4-5-10-15";
+document.getElementById('valueBtn').onclick = function () {
+    alert(s.val());
+};
+document.getElementById('clearBtn').onclick = function () {
+    s.clear();
+};
+</script>
+</body>
+</html>
