@@ -4,7 +4,7 @@ jsPatternLock
 An Andoid like pattern lock plugin using javascript and rapheal(a Javascript Library for SVG)
 
 
-<a href="jsfiddle.net/ajai/TbuE6/" target="_blank">Click here for demo</a>
+<a href="http://jsfiddle.net/ajai/TbuE6/" target="_blank">Click here for demo</a>
 
 <h2>Documentation</h2>
 <h4>How to use? </h4>
